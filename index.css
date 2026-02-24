@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;700;800&family=Inter:wght@400;700&display=swap');
+
+:root {
+  --brand-dark: #0F172A; /* 深いネイビー */
+  --brand-blue: #334155; /* 落ち着いたブルーグレー */
+  --brand-sky: #7BAFD4;  /* スカイブルー */
+  --brand-beige: #F1F5F9; /* 青みのあるベージュ/グレー */
+  --brand-accent: #38B2AC; /* アクセントのティール */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  background-color: var(--brand-beige);
+  color: var(--brand-dark);
+  line-height: 1.8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif {
+  font-family: 'Shippori Mincho', serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-smooth);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Utilities */
+.section-number {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 1;
+  opacity: 0.05;
+  position: absolute;
+  top: -1.5rem;
+  left: -0.5rem;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .section-number {
+    font-size: 8rem;
+    top: -3.5rem;
+    left: -2rem;
+  }
+}
+
+.hero-image-overlay {
+  background: linear-gradient(to bottom, rgba(241, 245, 249, 0.9) 0%, rgba(241, 245, 249, 0.5) 100%);
+}
+
+.btn-hover {
+  transition: var(--transition-smooth);
+}
+
+.btn-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+.hover-line {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hover-line::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.hover-line:hover::after {
+  width: 100%;
+}
+
+.image-placeholder {
+  background-color: #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 1.2s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.image-placeholder:hover img {
+  transform: scale(1.08);
+}
+
+::selection {
+  background: var(--brand-sky);
+  color: white;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brand-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-dark);
+}
+
+/* Navigation items */
+.nav-link {
+  transition: var(--transition-smooth);
+  opacity: 0.7;
+}
+
+.nav-link:hover {
+  opacity: 1;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(241, 245, 249, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
