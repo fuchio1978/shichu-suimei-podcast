@@ -1,9 +1,8 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    // GitHub Pagesにデプロイする場合、リポジトリ名に合わせて設定する必要があります
-    // 例: https://<USERNAME>.github.io/<REPO>/ の場合は '/<REPO>/'
-    base: './',
+    // GitHub Pagesにデプロイする場合、リポジリ名に合わせて設定する必要があります
+    base: '/shichu-suimei-podcast/',
     build: {
         outDir: 'dist',
     }
